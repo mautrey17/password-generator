@@ -29,23 +29,9 @@ function generatePassword() {
   var pwNumbers = confirm("Would you like your password to include numbers? Please answer yes or no");
   var pwSpecial = confirm("Would you like your password to include special characters? Please answer yes or no");
   var pwLength = prompt("Welcome to the best password generator on the web! How long would you like your password to be? Please enter a number between 8 and 128");
+  var newPassword = [];
 
-  // 
-  //   for(i=0;i<pwLength;i++){
-  //     var newPassword = [];
-  //     newPassword.push(characterArray[Math.floor(Math.random() * characterArray.length)]);
-      
-  //   }
-  // }
 
-  // function counter(characterArray){
-  
-  // for(i=0;i<pwLength;i++){
-        
-  //   newPassword.push(array123[Math.floor(Math.random() * array123.length)]);
-    
-  // }
-  // }
 
   if(parseInt(pwLength) < 8 || parseInt(pwLength) > 128){
     alert("Error! Please restart and enter a valid number");
@@ -54,43 +40,53 @@ function generatePassword() {
 
     if(pwLetterCase && pwNumbers && pwSpecial){
       var array123 = arrayLettersLower.concat(arrayLettersUpper, arrayNumbers, arraySpecial);
-      // 
-      var newPassword = [];
-      for(i=0;i<pwLength;i++){
-          
-        newPassword.push(array123[Math.floor(Math.random() * array123.length)]);
-      }
+      
+      
+      newPassword = counter(array123, pwLength);
+      
       
     }
   
     else if(pwLetterCase && pwNumbers && pwSpecial === false){
       var array12 = arrayLettersLower.concat(arrayLettersUpper, arrayNumbers);
-      console.log(array12);
+      newPassword = counter(array12, pwLength);
     }
     else if(pwLetterCase && pwNumbers === false && pwSpecial){
       var array13 = arrayLettersLower.concat(arrayLettersUpper, arraySpecial);
-      console.log(array13);
+      newPassword = counter(array13, pwLength);
     }
     else if(pwLetterCase === false && pwNumbers && pwSpecial){
       var array23 = arrayLettersLower.concat(arrayNumbers, arraySpecial);
-      console.log(array23);
+      newPassword = counter(array23, pwLength);
     }
     else if(pwLetterCase && pwNumbers === false && pwSpecial===false){
       var array1 = arrayLettersLower.concat(arrayLettersUpper);
-      console.log(array1);
+      newPassword = counter(array1, pwLength);
     }
     else if(pwLetterCase  === false && pwNumbers && pwSpecial===false){
       var array2 = arrayLettersLower.concat(arrayNumbers);
-      console.log(array2);
+      newPassword = counter(array2, pwLength);
     }
     else if(pwLetterCase  === false && pwNumbers===false && pwSpecial){
       var array3 = arrayLettersLower.concat(arraySpecial);
-      console.log(array3);
+      newPassword = counter(array3, pwLength);
     }
-    return newPassword.join('');
+    else{
+      newPassword = counter(arrayLettersLower, pwLength);
+    }
+    return newPassword;
   }
 
 
 
 }
-
+function counter (arrayCharacter, pwLength){
+  var newPassword = [];
+  for(i=0;i<pwLength;i++){
+  
+  newPassword.push(arrayCharacter[Math.floor(Math.random() * arrayCharacter.length)]);
+  
+  }
+  return newPassword.join('');
+  
+}
