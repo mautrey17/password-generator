@@ -33,11 +33,7 @@ function generatePassword() {
 
 
 
-  if(parseInt(pwLength) < 8 || parseInt(pwLength) > 128){
-    alert("Error! Please restart and enter a valid number");
-  }
-  else{
-
+  if(parseInt(pwLength) >= 8  && parseInt(pwLength) <= 128){
     if(pwLetterCase && pwNumbers && pwSpecial){
       var array123 = arrayLettersLower.concat(arrayLettersUpper, arrayNumbers, arraySpecial);
       
@@ -75,6 +71,11 @@ function generatePassword() {
       newPassword = counter(arrayLettersLower, pwLength);
     }
     return newPassword;
+    
+  }
+  else{
+    alert("Error! Please restart and enter a valid number");
+    return "Please input a valid number"
   }
 
 
