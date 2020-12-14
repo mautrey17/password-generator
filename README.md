@@ -5,4 +5,4 @@ Installation: None required
 
 Usage: Follow the link https://mautrey17.github.io/password-generator/ to access the website. Click on the button "generate password" to begin the prompts to create the desired password. Ok is selected to include the criteria and no does not add those characters.
 
-![alt text](assets/images/passwordScreenshot.png)
+![alt text](Assets/images/passwordScreenshot.png)
