@@ -25,9 +25,9 @@ var arraySpecial = ["@", "/", "?", "!", "@", "#", "$", "%", "^", "&", "*", "(", 
 
 function generatePassword() {
   //password prompts
-  var pwLetterCase = confirm("Would like your password to contain a mix of upper and lower case letters? Please answer yes or no");
-  var pwNumbers = confirm("Would you like your password to include numbers? Please answer yes or no");
-  var pwSpecial = confirm("Would you like your password to include special characters? Please answer yes or no");
+  var pwLetterCase = confirm("Would like your password to contain a mix of upper and lower case letters? Please select ok for yes or cancel for no");
+  var pwNumbers = confirm("Would you like your password to include numbers? Please select ok for yes or cancel for no");
+  var pwSpecial = confirm("Would you like your password to include special characters? Please select ok for yes or cancel for no");
   var pwLength = prompt("Welcome to the best password generator on the web! How long would you like your password to be? Please enter a number between 8 and 128");
   var newPassword = [];
 
