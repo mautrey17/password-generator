@@ -32,41 +32,53 @@ function generatePassword() {
   var newPassword = [];
 
 
-
+  //make sure password length is a valid entry
   if(parseInt(pwLength) >= 8  && parseInt(pwLength) <= 128){
+
+    //Upper and lower case letters, numbers, and special characters
     if(pwLetterCase && pwNumbers && pwSpecial){
       var array123 = arrayLettersLower.concat(arrayLettersUpper, arrayNumbers, arraySpecial);
       
-      
       newPassword = counter(array123, pwLength);
-      
-      
     }
-  
+    
+    //Upper and lower case letters, and numbers
     else if(pwLetterCase && pwNumbers && pwSpecial === false){
       var array12 = arrayLettersLower.concat(arrayLettersUpper, arrayNumbers);
       newPassword = counter(array12, pwLength);
     }
+
+    //Upper and lower case letters, and special characters
     else if(pwLetterCase && pwNumbers === false && pwSpecial){
       var array13 = arrayLettersLower.concat(arrayLettersUpper, arraySpecial);
       newPassword = counter(array13, pwLength);
     }
+
+    //lower case letters, numbers, and special characters
     else if(pwLetterCase === false && pwNumbers && pwSpecial){
       var array23 = arrayLettersLower.concat(arrayNumbers, arraySpecial);
       newPassword = counter(array23, pwLength);
     }
+
+    //Upper and lower case letters
     else if(pwLetterCase && pwNumbers === false && pwSpecial===false){
       var array1 = arrayLettersLower.concat(arrayLettersUpper);
       newPassword = counter(array1, pwLength);
     }
+
+    //lower case letters and numbers
     else if(pwLetterCase  === false && pwNumbers && pwSpecial===false){
       var array2 = arrayLettersLower.concat(arrayNumbers);
       newPassword = counter(array2, pwLength);
     }
+
+    //lower case letters and special characters
     else if(pwLetterCase  === false && pwNumbers===false && pwSpecial){
       var array3 = arrayLettersLower.concat(arraySpecial);
       newPassword = counter(array3, pwLength);
     }
+
+    //lower case letters
     else{
       newPassword = counter(arrayLettersLower, pwLength);
     }
@@ -81,6 +93,7 @@ function generatePassword() {
 
 
 }
+//generates random entries for password based on desired length
 function counter (arrayCharacter, pwLength){
   var newPassword = [];
   for(i=0;i<pwLength;i++){
