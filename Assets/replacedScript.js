@@ -1,3 +1,6 @@
+// This code was my first attempt at the project. If you have time to look through it I am curious to know how it would have Scored. This code will be deleted after the project has been returned
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
